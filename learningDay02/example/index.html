@@ -18,9 +18,23 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="counter++">Add</button>
-      <button v-on:click="counter--">Remove</button>
+      <!-- 
+        both ways are allowed
+        add() / add
+        reduce() / reduce
+      -->
+      <!-- modifer counting happens when right click on mouse -->
+      <button v-on:click.right="add(1)">Add</button>
+      <button v-on:click="reduce(1)">Remove</button>
+      <button v-on:click="add(5)">Add+5</button>
+      <button v-on:click="reduce(5)">Reduce-5</button>
       <p>Result: {{ counter }}</p>
+      <input type="text" v-on:input="setName($event, 'Nick')" v-on:keyup.enter="confirmInput">
+      <p>Your name: {{ confirmName }}</p>
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign up</button>
+      </form>
     </section>
   </body>
 </html>
