@@ -5,7 +5,29 @@ const app = Vue.createApp({
       name: ''
     };
   },
+  computed: {
+    // we treated it a property as it is a method
+    fullName() {
+      console.log('Running again');
+      if(this.name === '') {
+        return '';
+      } else {
+        return this.name + ' ' + 'Nick';
+      }  
+    }
+  },
   methods: {
+    confirmedName() {
+      // consolo.log to prove the following
+      // non event bond methods will be re-excuted when any methods in Vue.
+      // This is not good per performance perspective.
+      console.log('Running again');
+      if(this.name === '') {
+        return '';
+      } else {
+        return this.name + ' ' + 'Nick';
+      }  
+    },
     setName(event, lastName) {
       this.name = event.target.value;
     },
