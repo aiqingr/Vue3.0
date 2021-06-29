@@ -7,14 +7,14 @@ const app = Vue.createApp({
   },
   computed: {
     // we treated it a property as it is a method
-    fullName() {
+/*     fullName() {
       console.log('Running again');
       if(this.name === '') {
         return '';
       } else {
         return this.name + ' ' + 'Nick';
       }  
-    }
+    } */
   },
   methods: {
     confirmedName() {
